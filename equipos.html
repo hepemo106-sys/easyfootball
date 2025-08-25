@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Equipos — EasyFootball</title>
+<link rel="stylesheet" href="/css/styles.css">
+<link rel="icon" href="data:,">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="/"><span class="logo">⚽</span> <strong>EasyFootball</strong></a>
+    <nav class="nav">
+      <a href="/" class="nav-link">Inicio</a>
+      <a href="/equipos.html" class="nav-link active">Equipos</a>
+      <a href="/noticias.html" class="nav-link">Noticias</a>
+      <a href="/traspasos.html" class="nav-link">Traspasos</a>
+    </nav>
+    <div class="actions">
+      <input id="teamSearch" type="search" placeholder="Buscar equipo o jugador…" />
+      <button id="themeBtn" title="Modo claro/oscuro">🌗</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1>Equipos — LaLiga</h1>
+    <div id="teamsGrid" class="grid"></div>
+  </main>
+
+  <dialog id="profileModal">
+    <article id="profileContent"></article>
+    <div class="modal-actions">
+      <button id="closeModal" class="btn">Cerrar</button>
+    </div>
+  </dialog>
+
+  <footer class="footer">© 2025 EasyFootball</footer>
+
+  <script src="/js/main.js"></script>
+  <script src="/js/equipos.js"></script>
+</body>
+</html>
