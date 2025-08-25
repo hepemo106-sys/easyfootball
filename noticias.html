@@ -1,41 +1,36 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Noticias — EasyFootball</title>
-<link rel="stylesheet" href="/css/styles.css">
-<link rel="icon" href="data:,">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Noticias - EasyFootball</title>
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-  <header class="topbar">
-    <a class="brand" href="/"><span class="logo">⚽</span> <strong>EasyFootball</strong></a>
-    <nav class="nav">
-      <a href="/" class="nav-link">Inicio</a>
-      <a href="/equipos.html" class="nav-link">Equipos</a>
-      <a href="/noticias.html" class="nav-link active">Noticias</a>
-      <a href="/traspasos.html" class="nav-link">Traspasos</a>
+  <header>
+    <h1>⚽ EasyFootball</h1>
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="equipos.html">Equipos</a>
+      <a href="noticias.html">Noticias</a>
+      <a href="traspasos.html">Traspasos</a>
     </nav>
-    <div class="actions">
-      <button id="themeBtn" title="Modo claro/oscuro">🌗</button>
-    </div>
+    <button id="theme-toggle">🌙 Modo Oscuro</button>
   </header>
 
-  <main class="container">
-    <h1>Noticias de Fútbol</h1>
+  <main>
+    <h2>📰 Noticias Generales</h2>
+    <div id="noticias-container" class="grid"></div>
 
-    <form id="rssForm" class="rss-form">
-      <input id="rssUrl" type="url" placeholder="Pega un RSS (ej: https://www.marca.com/rss/futbol.html)" />
-      <button class="btn" type="submit">➕ Añadir feed</button>
-    </form>
-
-    <div id="newsList" class="news-grid"></div>
-    <p class="muted">RSS vía <code>api.allorigins.win</code>. Las noticias abren en su medio original.</p>
+    <h2>💸 Noticias de Traspasos</h2>
+    <div id="traspasos-container" class="grid"></div>
   </main>
 
-  <footer class="footer">© 2025 EasyFootball</footer>
+  <footer>
+    <p>EasyFootball © 2025</p>
+  </footer>
 
-  <script src="/js/main.js"></script>
-  <script src="/js/noticias.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/noticias.js"></script>
 </body>
 </html>
