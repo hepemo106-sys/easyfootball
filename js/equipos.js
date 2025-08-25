@@ -5,7 +5,7 @@
 const equipos = [
   {
     nombre: "Real Madrid",
-    logo: "https://upload.wikimedia.org/wikipedia/en/thumb/5/56/Real_Madrid_CF.svg/640px-Real_Madrid_CF.svg.png",
+    logo: "assets/logos/realmadrid.png",
     jugadores: [
       "Thibaut Courtois", "Andriy Lunin", "Éder Militão", "Antonio Rüdiger", "David Alaba",
       "Ferland Mendy", "Dani Carvajal", "Nacho Fernández", "Fran García", "Aurélien Tchouaméni",
