@@ -1,55 +1,34 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>EasyFootball — LaLiga en vivo</title>
-<meta name="description" content="Resultados, equipos y noticias de LaLiga. EasyFootball." />
-<link rel="stylesheet" href="/css/styles.css">
-<link rel="icon" href="data:,">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EasyFootball - Resultados en vivo</title>
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-  <header class="topbar">
-    <a class="brand" href="/"><span class="logo">⚽</span> <strong>EasyFootball</strong></a>
-    <nav class="nav">
-      <a href="/" class="nav-link active">Inicio</a>
-      <a href="/equipos.html" class="nav-link">Equipos</a>
-      <a href="/noticias.html" class="nav-link">Noticias</a>
-      <a href="/traspasos.html" class="nav-link">Traspasos</a>
+  <header>
+    <h1>⚽ EasyFootball</h1>
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="equipos.html">Equipos</a>
+      <a href="noticias.html">Noticias</a>
+      <a href="traspasos.html">Traspasos</a>
     </nav>
-    <div class="actions">
-      <button id="themeBtn" title="Modo claro/oscuro">🌗</button>
-    </div>
+    <button id="theme-toggle">🌙 Modo Oscuro</button>
   </header>
 
-  <main class="container">
-    <h1>Partidos — LaLiga</h1>
-    <p class="muted">* Esta versión aún no usa API en vivo. Después conectamos live score sin cambiar el diseño.</p>
-
-    <section id="live" class="card">
-      <h2 class="card-title">En juego / Próximos</h2>
-      <div id="matchesList" class="list"></div>
-    </section>
-
-    <section class="cards-2">
-      <a class="card quick" href="/equipos.html">
-        <h3>🏟️ Equipos</h3>
-        <p>Escudos, datos y plantillas.</p>
-      </a>
-      <a class="card quick" href="/noticias.html">
-        <h3>📰 Noticias</h3>
-        <p>Últimos titulares de medios.</p>
-      </a>
-      <a class="card quick" href="/traspasos.html">
-        <h3>🔁 Traspasos</h3>
-        <p>Rumores y fichajes confirmados.</p>
-      </a>
-    </section>
+  <main>
+    <h2>Resultados en Vivo - LaLiga 25/26</h2>
+    <div id="resultados-container" class="grid">
+      <p>Pronto conectaremos los resultados en vivo vía API.</p>
+    </div>
   </main>
 
-  <footer class="footer">© 2025 EasyFootball · LaLiga</footer>
+  <footer>
+    <p>EasyFootball © 2025</p>
+  </footer>
 
-  <script src="/js/main.js"></script>
-  <script src="/js/resultados.js"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>
