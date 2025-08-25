@@ -1,66 +1,58 @@
-:root{
-  --bg:#0b1220; --fg:#e8ecf1; --muted:#9aa6b2; --card:#121a2b;
-  --border:rgba(255,255,255,.08);
-  --accent:#2dd4bf; --accent-2:#60a5fa; --danger:#ef4444;
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: #f5f5f5;
+  color: #222;
+  transition: background 0.3s, color 0.3s;
 }
-:root.light{
-  --bg:#ffffff; --fg:#0b1220; --muted:#5b6470; --card:#f4f7fb;
-  --border:rgba(0,0,0,.08);
-  --accent:#0ea5e9; --accent-2:#10b981; --danger:#dc2626;
+
+header {
+  background: #111;
+  color: white;
+  padding: 1em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
-*{box-sizing:border-box}
-html,body{margin:0;padding:0}
-body{background:var(--bg);color:var(--fg);font:16px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial}
 
-a{color:var(--accent);text-decoration:none}
-.container{max-width:1100px;margin:18px auto;padding:0 16px}
+header nav a {
+  margin: 0 10px;
+  color: white;
+  text-decoration: none;
+}
 
-.topbar{position:sticky;top:0;z-index:10;display:flex;gap:12px;align-items:center;justify-content:space-between;padding:10px 14px;background:var(--card);border-bottom:1px solid var(--border)}
-.brand{display:flex;align-items:center;gap:8px}
-.logo{font-size:22px}
-.nav{display:flex;gap:10px;flex-wrap:wrap}
-.nav-link{padding:6px 10px;border-radius:8px;color:var(--fg)}
-.nav-link:hover,.nav-link.active{background:var(--border)}
-.actions{display:flex;gap:8px;align-items:center}
-#teamSearch{padding:8px 10px;border:1px solid var(--border);background:transparent;color:var(--fg);border-radius:8px;min-width:220px}
-#themeBtn{background:var(--accent-2);color:#001;border:0;padding:8px 10px;border-radius:8px;cursor:pointer}
+header button {
+  padding: 5px 10px;
+}
 
-h1,h2{margin:6px 0 12px}
-.muted{color:var(--muted);font-size:13px}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1em;
+  padding: 1em;
+}
 
-.card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:14px;margin:12px 0}
-.card-title{margin:0 0 8px}
+.equipo-card, .noticia-card {
+  background: white;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
 
-.cards-2{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin:16px 0}
-.card.quick{transition:transform .15s}
-.card.quick:hover{transform:translateY(-3px)}
+.logo-equipo {
+  width: 60px;
+  height: 60px;
+}
 
-.list{display:grid;gap:10px}
-.match{display:flex;gap:12px;align-items:center;justify-content:space-between;background:var(--card);padding:10px 12px;border-radius:12px;border:1px solid var(--border)}
-.badge{display:inline-block;padding:2px 8px;border-radius:999px;font-size:12px;background:var(--border)}
-.badge.live{background:linear-gradient(90deg,#ef4444,#f59e0b);color:#fff}
-
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
-.tile{background:var(--card);border:1px solid var(--border);padding:12px;border-radius:12px}
-.tile h3{display:flex;align-items:center;gap:8px;margin:0 0 6px}
-.tile img{width:28px;height:28px;border-radius:4px;border:1px solid var(--border);background:#fff}
-
-.news-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
-.news-card{display:flex;flex-direction:column;gap:6px;background:var(--card);border:1px solid var(--border);padding:12px;border-radius:12px}
-.news-card a{color:var(--fg);text-decoration:none}
-.news-card a:hover{color:var(--accent)}
-.news-meta{display:flex;gap:10px;align-items:center;color:var(--muted);font-size:12px}
-
-.btn{padding:8px 12px;border:0;border-radius:10px;background:var(--accent);color:#001;font-weight:700;cursor:pointer}
-.btn:hover{filter:brightness(1.05)}
-.rss-form{display:flex;gap:8px;margin:8px 0}
-.rss-form input{flex:1;padding:8px 10px;border:1px solid var(--border);background:transparent;color:var(--fg);border-radius:8px}
-
-.footer{opacity:.75;text-align:center;padding:24px}
-
-dialog{border:0;border-radius:14px;max-width:720px;width:95%;background:var(--card);color:var(--fg);padding:0}
-dialog article{padding:16px}
-dialog::backdrop{background:rgba(0,0,0,.55)}
-.modal-actions{padding:0 16px 16px;display:flex;justify-content:flex-end}
-
-@media (max-width:720px){#teamSearch{min-width:140px}}
+body.dark-mode {
+  background: #121212;
+  color: #eee;
+}
+body.dark-mode header {
+  background: #222;
+}
+body.dark-mode .equipo-card,
+body.dark-mode .noticia-card {
+  background: #1e1e1e;
+  color: #eee;
+}
