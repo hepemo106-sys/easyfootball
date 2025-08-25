@@ -1,117 +1,220 @@
-import {el} from '/js/main.js';
+// ====================
+// DATOS DE LALIGA 25/26
+// ====================
 
-const teams = [
-  { id:101, name:"Real Madrid", short:"RMA", country:"España", logo:"https://upload.wikimedia.org/wikipedia/en/5/56/Real_Madrid_CF.svg",
-    squad:[
-      {name:"Thibaut Courtois", pos:"POR", age:33},
-      {name:"Dani Carvajal", pos:"LD", age:33},
-      {name:"Éder Militão", pos:"DFC", age:27},
-      {name:"Jude Bellingham", pos:"MC", age:22},
-      {name:"Vinícius Jr", pos:"EI", age:25}
-    ]},
-  { id:102, name:"Barcelona", short:"BAR", country:"España", logo:"https://upload.wikimedia.org/wikipedia/en/4/47/FC_Barcelona_%28crest%29.svg",
-    squad:[
-      {name:"Marc-André ter Stegen", pos:"POR", age:33},
-      {name:"Ronald Araújo", pos:"DFC", age:26},
-      {name:"Alejandro Balde", pos:"LI", age:21},
-      {name:"Pedri", pos:"MC", age:22},
-      {name:"Robert Lewandowski", pos:"DC", age:37}
-    ]},
-  { id:103, name:"Atlético de Madrid", short:"ATL", country:"España", logo:"https://upload.wikimedia.org/wikipedia/en/f/f4/Atletico_Madrid_2017_logo.svg",
-    squad:[
-      {name:"Jan Oblak", pos:"POR", age:32},
-      {name:"José María Giménez", pos:"DFC", age:30},
-      {name:"Koke", pos:"MC", age:33},
-      {name:"Antoine Griezmann", pos:"SD", age:34}
-    ]},
-  { id:104, name:"Sevilla", short:"SEV", country:"España", logo:"https://upload.wikimedia.org/wikipedia/en/3/3b/Sevilla_FC_logo.svg",
-    squad:[
-      {name:"Jesús Navas", pos:"LD", age:39},
-      {name:"Ivan Rakitić", pos:"MC", age:37}
-    ]},
-  { id:105, name:"Real Betis", short:"BET", country:"España", logo:"https://upload.wikimedia.org/wikipedia/en/1/13/Real_betis_logo.svg",
-    squad:[
-      {name:"Claudio Bravo", pos:"POR", age:42},
-      {name:"Nabil Fekir", pos:"MP", age:32}
-    ]},
-  { id:106, name:"Villarreal", short:"VIL", country:"España", logo:"https://upload.wikimedia.org/wikipedia/en/7/70/Villarreal_CF_logo.svg",
-    squad:[
-      {name:"Gerard Moreno", pos:"DC", age:33}
-    ]},
-  { id:107, name:"Valencia", short:"VAL", country:"España", logo:"https://upload.wikimedia.org/wikipedia/en/c/ce/Valenciacf.svg",
-    squad:[
-      {name:"José Gayà", pos:"LI", age:30}
-    ]},
-  { id:108, name:"Real Sociedad", short:"RSO", country:"España", logo:"https://upload.wikimedia.org/wikipedia/en/f/f1/Real_Sociedad_logo.svg",
-    squad:[
-      {name:"Mikel Oyarzabal", pos:"EI", age:28}
-    ]},
-  { id:109, name:"Athletic Club", short:"ATH", country:"España", logo:"https://upload.wikimedia.org/wikipedia/en/9/98/Athletic_bilbao.svg",
-    squad:[
-      {name:"Iñaki Williams", pos:"ED", age:31}
-    ]},
-  { id:110, name:"Celta de Vigo", short:"CEL", country:"España", logo:"https://upload.wikimedia.org/wikipedia/en/1/10/Logo_RC_Celta_de_Vigo.svg",
-    squad:[
-      {name:"Iago Aspas", pos:"DC", age:38}
-    ]},
-  { id:111, name:"Girona", short:"GIR", country:"España", logo:"https://upload.wikimedia.org/wikipedia/en/5/5e/Girona_FC_Logo.svg",
-    squad:[
-      {name:"Artem Dovbyk", pos:"DC", age:28}
-    ]},
-  { id:112, name:"Getafe", short:"GET", country:"España", logo:"https://upload.wikimedia.org/wikipedia/en/5/56/Getafe_logo.svg", squad:[]},
-  { id:113, name:"Osasuna", short:"OSA", country:"España", logo:"https://upload.wikimedia.org/wikipedia/en/5/5f/Osasuna_logo.svg", squad:[]},
-  { id:114, name:"Rayo Vallecano", short:"RAY", country:"España", logo:"https://upload.wikimedia.org/wikipedia/en/1/1f/Rayo_Vallecano_crest.svg", squad:[]},
-  { id:115, name:"Real Mallorca", short:"MLL", country:"España", logo:"https://upload.wikimedia.org/wikipedia/en/c/c0/Rcd_mallorca.svg", squad:[]},
-  { id:116, name:"Las Palmas", short:"LPA", country:"España", logo:"https://upload.wikimedia.org/wikipedia/en/7/7f/UD_Las_Palmas_logo.svg", squad:[]},
-  { id:117, name:"Deportivo Alavés", short:"ALA", country:"España", logo:"https://upload.wikimedia.org/wikipedia/en/2/2e/Deportivo_Alav%C3%A9s_logo.svg", squad:[]},
-  { id:118, name:"Real Valladolid", short:"VLD", country:"España", logo:"https://upload.wikimedia.org/wikipedia/en/6/6e/Real_Valladolid_Logo.svg", squad:[]},
-  { id:119, name:"Leganés", short:"LEG", country:"España", logo:"https://upload.wikimedia.org/wikipedia/en/1/15/Club_Deportivo_Legan%C3%A9s_logo.svg", squad:[]}
+const equipos = [
+  {
+    nombre: "Real Madrid",
+    logo: "assets/logos/realmadrid.png",
+    jugadores: [
+      "Thibaut Courtois", "Andriy Lunin", "Éder Militão", "Antonio Rüdiger", "David Alaba",
+      "Ferland Mendy", "Dani Carvajal", "Nacho Fernández", "Fran García", "Aurélien Tchouaméni",
+      "Eduardo Camavinga", "Fede Valverde", "Luka Modrić", "Toni Kroos", "Jude Bellingham",
+      "Rodrygo Goes", "Vinícius Júnior", "Brahim Díaz", "Joselu", "Kylian Mbappé"
+    ]
+  },
+  {
+    nombre: "FC Barcelona",
+    logo: "assets/logos/barcelona.png",
+    jugadores: [
+      "Marc-André ter Stegen", "Iñaki Peña", "Ronald Araújo", "Jules Koundé", "Andreas Christensen",
+      "Alejandro Balde", "João Cancelo", "Pau Cubarsí", "Gavi", "Pedri",
+      "Frenkie de Jong", "Ilkay Gündogan", "Sergi Roberto", "Lamine Yamal", "Raphinha",
+      "Ferran Torres", "Robert Lewandowski", "Vitor Roque", "João Félix", "Marc Casadó"
+    ]
+  },
+  {
+    nombre: "Atlético de Madrid",
+    logo: "assets/logos/atletico.png",
+    jugadores: [
+      "Jan Oblak", "Ivo Grbić", "José María Giménez", "Stefan Savić", "Mario Hermoso",
+      "Reinildo Mandava", "Nahuel Molina", "César Azpilicueta", "Rodrigo de Paul", "Saúl Ñíguez",
+      "Koke", "Marcos Llorente", "Thomas Lemar", "Antoine Griezmann", "Álvaro Morata",
+      "Ángel Correa", "Memphis Depay", "Samuel Lino", "Rodrigo Riquelme", "Pablo Barrios"
+    ]
+  },
+  {
+    nombre: "Athletic Club",
+    logo: "assets/logos/athletic.png",
+    jugadores: [
+      "Unai Simón", "Julen Agirrezabala", "Iñigo Lekue", "Yuri Berchiche", "Dani Vivian",
+      "Yeray Álvarez", "Aitor Paredes", "Óscar de Marcos", "Mikel Vesga", "Oihan Sancet",
+      "Iker Muniain", "Ander Herrera", "Beñat Prados", "Unai Gómez", "Álex Berenguer",
+      "Iñaki Williams", "Nico Williams", "Raúl García", "Gorka Guruzeta", "Asier Villalibre"
+    ]
+  },
+  {
+    nombre: "Real Sociedad",
+    logo: "assets/logos/realsociedad.png",
+    jugadores: [
+      "Álex Remiro", "Unai Marrero", "Robin Le Normand", "Igor Zubeldia", "Jon Pacheco",
+      "Áritz Elustondo", "Hamari Traoré", "Diego Rico", "Martín Zubimendi", "Brais Méndez",
+      "Mikel Merino", "Ander Barrenetxea", "Takefusa Kubo", "David Silva", "Mikel Oyarzabal",
+      "Carlos Fernández", "André Silva", "Mohamed-Ali Cho", "Beñat Turrientes", "Jon Ander Olasagasti"
+    ]
+  },
+  {
+    nombre: "Villarreal CF",
+    logo: "assets/logos/villarreal.png",
+    jugadores: [
+      "Pepe Reina", "Filip Jörgensen", "Raúl Albiol", "Pau Torres", "Juan Foyth",
+      "Jorge Cuenca", "Alfonso Pedraza", "Kiko Femenía", "Etienne Capoue", "Francis Coquelin",
+      "Dani Parejo", "Álex Baena", "Yeremy Pino", "Samuel Chukwueze", "Gerard Moreno",
+      "José Luis Morales", "Arnaut Danjuma", "Alexander Sørloth", "Ilias Akhomach", "Manu Trigueros"
+    ]
+  },
+  {
+    nombre: "Real Betis",
+    logo: "assets/logos/betis.png",
+    jugadores: [
+      "Claudio Bravo", "Rui Silva", "Luiz Felipe", "Germán Pezzella", "Marc Bartra",
+      "Juan Miranda", "Héctor Bellerín", "Guido Rodríguez", "William Carvalho", "Nabil Fekir",
+      "Sergio Canales", "Rodri", "Ayoze Pérez", "Borja Iglesias", "Willian José",
+      "Juanmi", "Abde Ezzalzouli", "Luiz Henrique", "Paul Akouokou", "Assane Diao"
+    ]
+  },
+  {
+    nombre: "Sevilla FC",
+    logo: "assets/logos/sevilla.png",
+    jugadores: [
+      "Marko Dmitrović", "Orjan Nyland", "Jesús Navas", "Marcos Acuña", "Nemanja Gudelj",
+      "Loïc Badé", "Sergio Ramos", "Adrià Pedrosa", "Fernando", "Ivan Rakitić",
+      "Óliver Torres", "Joan Jordán", "Lucas Ocampos", "Suso", "Erik Lamela",
+      "Youssef En-Nesyri", "Rafa Mir", "Bryan Gil", "Dodi Lukebakio", "Alejo Véliz"
+    ]
+  },
+  {
+    nombre: "Valencia CF",
+    logo: "assets/logos/valencia.png",
+    jugadores: [
+      "Giorgi Mamardashvili", "Cristian Rivero", "Gabriel Paulista", "Mouctar Diakhaby", "Cenk Özkacar",
+      "José Gayà", "Thierry Correia", "Hugo Guillamón", "Javi Guerra", "Pepelu",
+      "Fran Pérez", "Sergi Canós", "Diego López", "André Almeida", "Hugo Duro",
+      "Justin Kluivert", "Samu Castillejo", "Marcos André", "Yunus Musah", "Alberto Marí"
+    ]
+  },
+  {
+    nombre: "Getafe CF",
+    logo: "assets/logos/getafe.png",
+    jugadores: [
+      "David Soria", "Kiko Casilla", "Djené Dakonam", "Domingos Duarte", "Stefan Mitrović",
+      "Juan Iglesias", "Gastón Álvarez", "Mauro Arambarri", "Nemanja Maksimović", "Carles Aleñá",
+      "Portu", "Borja Mayoral", "Jaime Mata", "Enes Ünal", "Óscar Rodríguez",
+      "Ángel Algobia", "Jordi Martín", "Amorim", "Patrick Kluivert Jr.", "Luis Milla"
+    ]
+  },
+  {
+    nombre: "Osasuna",
+    logo: "assets/logos/osasuna.png",
+    jugadores: [
+      "Sergio Herrera", "Aitor Fernández", "David García", "Unai García", "Juan Cruz",
+      "Rubén Peña", "Nacho Vidal", "Moi Gómez", "Jon Moncayola", "Lucas Torró",
+      "Ante Budimir", "Chimy Ávila", "Kike García", "Abdessamad Ezzalzouli", "Barbero",
+      "Darko Brasanac", "Pablo Ibáñez", "José Arnaiz", "Aimar Oroz", "Diego Moreno"
+    ]
+  },
+  {
+    nombre: "Celta de Vigo",
+    logo: "assets/logos/celta.png",
+    jugadores: [
+      "Iván Villar", "Agustín Marchesín", "Joseph Aidoo", "Unai Núñez", "Javi Galán",
+      "Óscar Mingueza", "Kevin Vázquez", "Renato Tapia", "Gabri Veiga", "Luca de la Torre",
+      "Carles Pérez", "Iago Aspas", "Jørgen Strand Larsen", "Gonçalo Paciência", "Miguel Rodríguez",
+      "Haris Seferovic", "Williot Swedberg", "Fran Beltrán", "Santi Mina", "Denis Suárez"
+    ]
+  },
+  {
+    nombre: "Rayo Vallecano",
+    logo: "assets/logos/rayo.png",
+    jugadores: [
+      "Stole Dimitrievski", "Diego López", "Alejandro Catena", "Abdul Mumin", "Florian Lejeune",
+      "Iván Balliu", "Fran García", "Óscar Valentín", "Santi Comesaña", "Isi Palazón",
+      "Álvaro García", "Radamel Falcao", "Raúl de Tomás", "Sergio Camello", "Bebé",
+      "Óscar Trejo", "Pathé Ciss", "Unai López", "Salvi Sánchez", "Randy Nteka"
+    ]
+  },
+  {
+    nombre: "Mallorca",
+    logo: "assets/logos/mallorca.png",
+    jugadores: [
+      "Predrag Rajković", "Dominik Greif", "Antonio Raíllo", "Martin Valjent", "José Copete",
+      "Pablo Maffeo", "Jaume Costa", "Dani Rodríguez", "Iñigo Ruiz de Galarreta", "Antonio Sánchez",
+      "Vedat Muriqi", "Kang-in Lee", "Amath Ndiaye", "Tino Kadewere", "Ángel Rodríguez",
+      "Abdón Prats", "Cyle Larin", "Manu Morlanes", "Samú Costa", "Sergi Darder"
+    ]
+  },
+  {
+    nombre: "Girona FC",
+    logo: "assets/logos/girona.png",
+    jugadores: [
+      "Paulo Gazzaniga", "Juan Carlos Martín", "David López", "Juanpe", "Santi Bueno",
+      "Arnau Martínez", "Miguel Gutiérrez", "Aleix García", "Iván Martín", "Yangel Herrera",
+      "Toni Villa", "Cristhian Stuani", "Valery Fernández", "Viktor Tsyhankov", "Artem Dovbyk",
+      "Portu", "Sávio", "Eric García", "Jhon Solís", "Pablo Torre"
+    ]
+  },
+  {
+    nombre: "Deportivo Alavés",
+    logo: "assets/logos/alaves.png",
+    jugadores: [
+      "Antonio Sivera", "Fernando Pacheco", "Rubén Duarte", "Abdelkabir Abqar", "Víctor Laguardia",
+      "Aleksandar Sedlar", "Javi López", "Andoni Gorosabel", "Jon Guridi", "Antonio Blanco",
+      "Luis Rioja", "Carlos Vicente", "Xeber Alkain", "Samu Omorodion", "Kike García",
+      "Miguel de la Fuente", "Ander Guevara", "Benavídez", "Sylla", "Villalibre"
+    ]
+  },
+  {
+    nombre: "Granada CF",
+    logo: "assets/logos/granada.png",
+    jugadores: [
+      "André Ferreira", "Raúl Fernández", "Jesús Vallejo", "Domingos Duarte", "Ignasi Miquel",
+      "Ricard Sánchez", "Carlos Neva", "Sergio Ruiz", "Njegos Petrovic", "Óscar Melendo",
+      "Antonio Puertas", "Myrto Uzuni", "Bryan Zaragoza", "José Callejón", "Lucas Boyé",
+      "Facundo Pellistri", "Alberto Soro", "Víctor Díaz", "Jonathan Silva", "Pepe"
+    ]
+  },
+  {
+    nombre: "Las Palmas",
+    logo: "assets/logos/laspalmas.png",
+    jugadores: [
+      "Álvaro Valles", "Aarón Escandell", "Álex Suárez", "Saúl Coco", "Eric Curbelo",
+      "Sergi Cardona", "Daley Sinkgraven", "Jonathan Viera", "Kirian Rodríguez", "Alberto Moleiro",
+      "Enzo Loiodice", "Munir El Haddadi", "Marc Cardona", "Sandro Ramírez", "Pejiño",
+      "Benito Ramírez", "Fabio González", "Javi Muñoz", "Cristian Herrera", "Vitolo"
+    ]
+  },
+  {
+    nombre: "Cádiz CF",
+    logo: "assets/logos/cadiz.png",
+    jugadores: [
+      "Conan Ledesma", "David Gil", "Luis Hernández", "Fali", "Víctor Chust",
+      "Alfonso Espino", "Isaac Carcelén", "José Mari", "Rubén Alcaraz", "Álex Fernández",
+      "Brian Ocampo", "Iván Alejo", "Theo Bongonda", "Chris Ramos", "Roger Martí",
+      "Darwin Machís", "Ruben Sobrino", "Anthony Lozano", "Álvaro Negredo", "Jon Ander Garrido"
+    ]
+  }
 ];
-// (Puedes completar el resto de squads cuando quieras)
 
-const grid = document.getElementById('teamsGrid');
-const modal = document.getElementById('profileModal');
-const modalContent = document.getElementById('profileContent');
-const closeModal = document.getElementById('closeModal');
+// Renderizado dinámico
+document.addEventListener("DOMContentLoaded", () => {
+  const container = document.getElementById("equipos-container");
+  if (!container) return;
 
-function renderTeams(filter=""){
-  grid.innerHTML = "";
-  teams
-    .filter(t => !filter || t.name.toLowerCase().includes(filter) || t.short.toLowerCase().includes(filter) || t.squad.some(p=>p.name.toLowerCase().includes(filter)))
-    .forEach(t=>{
-      const card = el('div',{class:'tile'});
-      const head = el('h3',{},[
-        el('img',{src:t.logo,alt:t.name,loading:'lazy'}),
-        document.createTextNode(t.name)
-      ]);
-      const openBtn = el('button',{class:'btn'},[document.createTextNode('Ver plantilla')]);
-      openBtn.onclick = ()=>openTeam(t);
-      card.appendChild(head);
-      card.appendChild(el('p',{class:'muted'},[document.createTextNode('País: '+t.country+' · Sigla: '+t.short)]));
-      card.appendChild(openBtn);
-      grid.appendChild(card);
-    });
-}
+  equipos.forEach(eq => {
+    const card = document.createElement("div");
+    card.className = "equipo-card";
 
-function openTeam(team){
-  const list = team.squad.length
-    ? `<ul>${team.squad.map(p=>`<li>${p.name} — ${p.pos} · ${p.age} años</li>`).join('')}</ul>`
-    : `<p class="muted">Plantilla pendiente de completar.</p>`;
-  modalContent.innerHTML = `
-    <h2>${team.name}</h2>
-    <p><strong>País:</strong> ${team.country} · <strong>Sigla:</strong> ${team.short}</p>
-    <img src="${team.logo}" alt="${team.name}" style="width:64px;height:64px;background:#fff;border-radius:8px;border:1px solid var(--border)">
-    <h3>Plantilla</h3>
-    ${list}
-  `;
-  modal.showModal();
-}
-closeModal?.addEventListener('click', ()=>modal.close());
+    card.innerHTML = `
+      <img src="${eq.logo}" alt="${eq.nombre}" class="logo-equipo">
+      <h3>${eq.nombre}</h3>
+      <details>
+        <summary>Ver Plantilla</summary>
+        <ul>
+          ${eq.jugadores.map(j => `<li>${j}</li>`).join("")}
+        </ul>
+      </details>
+    `;
 
-// Buscador
-const teamSearch = document.getElementById('teamSearch');
-teamSearch?.addEventListener('input', e=>{
-  renderTeams(e.target.value.trim().toLowerCase());
+    container.appendChild(card);
+  });
 });
-
-renderTeams();
